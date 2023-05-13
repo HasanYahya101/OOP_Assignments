@@ -32,24 +32,48 @@ class Bronze : public AccountType
 {
 public:
     Bronze() : AccountType(100000) {}
-    double getDailyWithdrawalLimit() const { return dailyWithdrawalLimit; }
-    std::string getAccountTypeName() const { return "Bronze"; }
+
+    double getDailyWithdrawalLimit() const
+    {
+        return dailyWithdrawalLimit;
+    }
+
+    std::string getAccountTypeName() const
+    {
+        return "Bronze";
+    }
 };
 
 class Gold : public AccountType
 {
 public:
     Gold() : AccountType(500000) {}
-    double getDailyWithdrawalLimit() const { return dailyWithdrawalLimit; }
-    std::string getAccountTypeName() const { return "Gold"; }
+
+    double getDailyWithdrawalLimit() const
+    {
+        return dailyWithdrawalLimit;
+    }
+
+    std::string getAccountTypeName() const
+    {
+        return "Gold";
+    }
 };
 
 class Business : public AccountType
 {
 public:
     Business() : AccountType(20000000) {}
-    double getDailyWithdrawalLimit() const { return dailyWithdrawalLimit; }
-    std::string getAccountTypeName() const { return "Business"; }
+
+    double getDailyWithdrawalLimit() const
+    {
+        return dailyWithdrawalLimit;
+    }
+
+    std::string getAccountTypeName() const
+    {
+        return "Business";
+    }
 };
 
 class cardWarning
@@ -60,8 +84,16 @@ private:
 
 public:
     cardWarning(int id, long long card_num) : ID(id), card_num(card_num) {}
-    int getID() const { return ID; }
-    long long getCardNum() const { return card_num; }
+
+    int getID() const
+    {
+        return ID;
+    }
+
+    long long getCardNum() const
+    {
+        return card_num;
+    }
 };
 
 class Loan
@@ -124,13 +156,34 @@ public:
         cardPin = pin;
         balance = bal;
     }
-    long long getCardNumber() const { return cardNumber; }
-    string getCardNumber_str() const { return to_string(cardNumber); }
-    string getCardPin() const { return cardPin; }
-    double getBalance() const { return balance; }
-    void setCardNumber(int number) { cardNumber = number; }
-    void setCardPin(int pin) { cardPin = pin; }
-    void setBalance(double bal) { balance = bal; }
+    long long getCardNumber() const
+    {
+        return cardNumber;
+    }
+    string getCardNumber_str() const
+    {
+        return to_string(cardNumber);
+    }
+    string getCardPin() const
+    {
+        return cardPin;
+    }
+    double getBalance() const
+    {
+        return balance;
+    }
+    void setCardNumber(int number)
+    {
+        cardNumber = number;
+    }
+    void setCardPin(int pin)
+    {
+        cardPin = pin;
+    }
+    void setBalance(double bal)
+    {
+        balance = bal;
+    }
 };
 
 class Transaction
@@ -184,11 +237,26 @@ public:
     }
 
     // setters
-    void setDate(const string &d) { date = d; }
-    void setUserID(int id) { userID = id; }
-    void setAmount(double amt) { amount = amt; }
-    void setType(const string &t) { type = t; }
-    void setRecieverID(int recID) { recieverID = recID; }
+    void setDate(const string &d)
+    {
+        date = d;
+    }
+    void setUserID(int id)
+    {
+        userID = id;
+    }
+    void setAmount(double amt)
+    {
+        amount = amt;
+    }
+    void setType(const string &t)
+    {
+        type = t;
+    }
+    void setRecieverID(int recID)
+    {
+        recieverID = recID;
+    }
 };
 
 class User
@@ -429,29 +497,92 @@ public:
     }
 
     // getters
-    int getUserID() const { return userID; }
-    string getName() const { return name; }
-    string getAddress() const { return address; }
-    string getCNIC() const { return CNIC; }
-    string getEmail() const { return email; }
-    string getPassword() const { return password; }
-    double getBalance() const { return balance; }
-    double getLimit() const { return accountType->getDailyWithdrawalLimit(); }
-    string getaccountname() const { return accountType->getAccountTypeName(); }
-    AccountType *getAccountType() const { return accountType; }
-    vector<Transaction> getTransactions() const { return transactions; }
-    vector<Card> getCards() const { return cards; }
-    double get_withdraw_limit() const { return accountType->getDailyWithdrawalLimit(); }
+    int getUserID() const
+    {
+        return userID;
+    }
+    string getName() const
+    {
+        return name;
+    }
+    string getAddress() const
+    {
+        return address;
+    }
+    string getCNIC() const
+    {
+        return CNIC;
+    }
+    string getEmail() const
+    {
+        return email;
+    }
+    string getPassword() const
+    {
+        return password;
+    }
+    double getBalance() const
+    {
+        return balance;
+    }
+    double getLimit() const
+    {
+        return accountType->getDailyWithdrawalLimit();
+    }
+    string getaccountname() const
+    {
+        return accountType->getAccountTypeName();
+    }
+    AccountType *getAccountType() const
+    {
+        return accountType;
+    }
+    vector<Transaction> getTransactions() const
+    {
+        return transactions;
+    }
+    vector<Card> getCards() const
+    {
+        return cards;
+    }
+    double get_withdraw_limit() const
+    {
+        return accountType->getDailyWithdrawalLimit();
+    }
 
     // setters
-    void setUserID(int id) { userID = id; }
-    void setName(string name) { this->name = name; }
-    void setAddress(string add) { address = add; }
-    void setCNIC(string cnic) { CNIC = cnic; }
-    void setEmail(string email) { this->email = email; }
-    void setPassword(string pass) { password = pass; }
-    void setBalance(double bal) { balance = bal; }
-    void setAccountType(AccountType *accType) { accountType = accType; }
+    void setUserID(int id)
+    {
+        userID = id;
+    }
+    void setName(string name)
+    {
+        this->name = name;
+    }
+    void setAddress(string add)
+    {
+        address = add;
+    }
+    void setCNIC(string cnic)
+    {
+        CNIC = cnic;
+    }
+    void setEmail(string email)
+    {
+        this->email = email;
+    }
+    void setPassword(string pass)
+    {
+        password = pass;
+    }
+    void setBalance(double bal)
+    {
+        balance = bal;
+    }
+    void setAccountType(AccountType *accType)
+    {
+        accountType = accType;
+    }
 
     ~UserClient()
     {
@@ -743,28 +874,88 @@ public:
     }
 
     // getters
-    int getCompID() const { return compID; }
-    string getName() const { return comp_name; }
-    string getAddress() const { return address; }
-    string getTaxNum() const { return tax_num; }
-    string getEmail() const { return email; }
-    string getPassword() const { return password; }
-    double getBalance() const { return balance; }
-    string getAccountTypeNamename() const { return accountType->getAccountTypeName(); }
-    AccountType *getAccountType() const { return accountType; }
-    vector<Transaction> getTransactions() const { return transactions; }
-    vector<Card> getCards() const { return cards; }
-    double get_withdraw_limit() const { return accountType->getDailyWithdrawalLimit(); }
+    int getCompID() const
+    {
+        return compID;
+    }
+    string getName() const
+    {
+        return comp_name;
+    }
+    string getAddress() const
+    {
+        return address;
+    }
+    string getTaxNum() const
+    {
+        return tax_num;
+    }
+    string getEmail() const
+    {
+        return email;
+    }
+    string getPassword() const
+    {
+        return password;
+    }
+    double getBalance() const
+    {
+        return balance;
+    }
+    string getAccountTypeNamename() const
+    {
+        return accountType->getAccountTypeName();
+    }
+    AccountType *getAccountType() const
+    {
+        return accountType;
+    }
+    vector<Transaction> getTransactions() const
+    {
+        return transactions;
+    }
+    vector<Card> getCards() const
+    {
+        return cards;
+    }
+    double get_withdraw_limit() const
+    {
+        return accountType->getDailyWithdrawalLimit();
+    }
 
     // setters
-    void setCompID(int id) { compID = id; }
-    void setName(string name) { comp_name = name; }
-    void setAddress(string add) { address = add; }
-    void setTaxNum(string tax_num) { this->tax_num = tax_num; }
-    void setEmail(string email) { this->email = email; }
-    void setPassword(string pass) { password = pass; }
-    void setBalance(double bal) { balance = bal; }
-    void setAccountType(AccountType *accType) { accountType = accType; }
+    void setCompID(int id)
+    {
+        compID = id;
+    }
+    void setName(string name)
+    {
+        comp_name = name;
+    }
+    void setAddress(string add)
+    {
+        address = add;
+    }
+    void setTaxNum(string tax_num)
+    {
+        this->tax_num = tax_num;
+    }
+    void setEmail(string email)
+    {
+        this->email = email;
+    }
+    void setPassword(string pass)
+    {
+        password = pass;
+    }
+    void setBalance(double bal)
+    {
+        balance = bal;
+    }
+    void setAccountType(AccountType *accType)
+    {
+        accountType = accType;
+    }
 
     ~CompanyClient()
     {
@@ -820,17 +1011,44 @@ public:
     }
 
     // getters
-    string getName() const { return name; }
-    string getUsername() const { return username; }
-    string getPassword() const { return password; }
-    int getEmployeeID() const { return employee_ID; }
-    vector<UserClient *> getUserClients() const { return userClients; }
-    vector<CompanyClient *> getCompanyClients() const { return companyClients; }
+    string getName() const
+    {
+        return name;
+    }
+    string getUsername() const
+    {
+        return username;
+    }
+    string getPassword() const
+    {
+        return password;
+    }
+    int getEmployeeID() const
+    {
+        return employee_ID;
+    }
+    vector<UserClient *> getUserClients() const
+    {
+        return userClients;
+    }
+    vector<CompanyClient *> getCompanyClients() const
+    {
+        return companyClients;
+    }
 
     // setters
-    void setName(string name) { this->name = name; }
-    void setUsername(string username) { this->username = username; }
-    void setPassword(string password) { this->password = password; }
+    void setName(string name)
+    {
+        this->name = name;
+    }
+    void setUsername(string username)
+    {
+        this->username = username;
+    }
+    void setPassword(string password)
+    {
+        this->password = password;
+    }
 
     ~BankEmployee()
     {
@@ -2086,13 +2304,20 @@ void transfer_money_user_side()
                 system("pause");
                 company_menu_loggedin_user_side();
             }
-
+            int count = 0;
             cout << endl;
             cout << "Recievers cards numbers are below!" << endl
                  << endl;
             for (int l = 0; l < ::userClients[index_flag]->card_vector_size(); l++)
             {
                 cout << l + 1 << ". " << ::userClients[index_flag]->getCardNumber_per_index(l) << endl;
+                count++;
+            }
+            if (count == 0)
+            {
+                cout << "No cards found!" << endl;
+                system("pause");
+                company_menu_loggedin_user_side();
             }
             cout << endl;
             cout << "Enter index of the card you want to transfer to: ";
@@ -2682,10 +2907,21 @@ void company_transfer()
                 company_menu_loggedin();
             }
 
+            int count = 0;
+
             // loop and ask which card to use
             for (int j = 0; j < ::companyClients[i]->card_vector_size(); j++)
             {
                 cout << j + 1 << ". " << ::companyClients[i]->getCardNumber_per_index(j) << endl;
+                count++;
+            }
+
+            if (count == 0)
+            {
+                cout << endl;
+                cout << "You have no cards to transfer from!" << endl;
+                system("pause");
+                company_menu_loggedin();
             }
             cout << endl;
             cout << "Which card do you want to use? (Enter Index): ";
@@ -2793,9 +3029,18 @@ void company_transfer()
             cout << endl;
             cout << "Recievers cards numbers are below!" << endl
                  << endl;
+            int count_2 = 0;
             for (int l = 0; l < ::userClients[index_flag]->card_vector_size(); l++)
             {
                 cout << l + 1 << ". " << ::userClients[index_flag]->getCardNumber_per_index(l) << endl;
+                count_2++;
+            }
+            if (count_2 == 0)
+            {
+                cout << endl;
+                cout << "No cards found!" << endl;
+                system("pause");
+                company_menu_loggedin();
             }
             cout << endl;
             cout << "Enter index of the card you want to transfer to: ";
@@ -3386,9 +3631,18 @@ void user_transfer()
             cout << "All Users with ID and Email are as Under: " << endl
                  << endl;
 
+            int count = 0;
+
             for (int k = 0; k < ::userClients.size(); k++)
             {
                 cout << k + 1 << ". " << ::userClients[k]->getUserID() << ", " << ::userClients[k]->getEmail() << endl;
+                count++;
+            }
+            if (count == 0)
+            {
+                cout << "No users found!" << endl;
+                system("pause");
+                user_menu_loggedin();
             }
             cout << endl;
             cout << "Enter index of the user you want to transfer to: ";
@@ -3404,9 +3658,18 @@ void user_transfer()
             cout << endl;
             cout << "Recievers cards numbers are below!" << endl
                  << endl;
+            int count_temp = 0;
             for (int l = 0; l < ::userClients[index1 - 1]->card_vector_size(); l++)
             {
                 cout << l + 1 << ". " << ::userClients[index1 - 1]->getCardNumber_per_index(l) << endl;
+                count_temp++;
+            }
+
+            if (count_temp == 0)
+            {
+                cout << "No cards found!" << endl;
+                system("pause");
+                user_menu_loggedin();
             }
             cout << endl;
             cout << "Enter index of the card you want to transfer to: ";
